@@ -214,12 +214,12 @@
                                     <!-- /.panel-heading -->
                             <div class="panel-body">
         
-                                <form role="form" method="post" action="./?r=user/update" enctype="multipart/form-data">
-                                    <div class="form-group">
-                                        <label>Imagen (480x480)</label>
-                                        <input type="file" name="image">
-                                        <br>
-                                    <center><img src="../img/user.webp" class="img-responsive img-fluid img-circle" style="width:180px;"></center>
+                                <form role="form" method="#" action="#" enctype="multipart/form-data">
+                                    <div class="form-group text-center">
+                                            <img id="img-usuario"class="img-circle" width="150px" height="150px" src="">
+                                            <input name="file-input-user" id="file-input-user" type="file" />
+                                            <br />
+                                            <label >Imagen Perfil</label>
                                     </div>
                                     <div class="form-group">
                                         <label>Nombre completo</label>
@@ -236,17 +236,16 @@
                                     <div class="form-group">
                                         <label>Password</label>
                                         <input type="password" name="password" class="form-control" placeholder="Password" >
-                                        <p class="text-muted">Solo se modifica la contrase&ntilde;a si el campo no esta vacio.</p>
                                     </div>
                                     <div class="form-group">
                                         <label>Tipo</label>
-                                                                                                            <select name="kind_id" class="form-control" required>
+                                        <select name="kind_id" class="form-control" required disabled>
                                                 <option value="">-- SELECCIONE TIPO --</option>
-                                                                                    <option value="1" selected>Administrador</option>
-                                                                                <option value="2" >Autor</option>
-                                                                                <option value="3" >Lector</option>
-                                                                        </select>
-                                                                    </div>
+                                                    <option value="1" selected>Administrador</option>
+                                                        <option value="2" >Autor</option>
+                                                        <option value="3" >Lector</option>
+                                            </select>
+                                        </div>
                                     <input type="hidden" name="id" value="1">
                                     <button type="submit" class="btn btn-primary">Actualizar</button>
         
@@ -289,6 +288,7 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="../js/startmin.js"></script>
+        <script src="../js/subirImg.js"></script>
 
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
         <script>

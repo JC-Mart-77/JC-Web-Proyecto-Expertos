@@ -115,6 +115,25 @@ function agregarPostUsuarios() {
         
 
 }
+function agregarPagina() {
+    let pagina = {
+        titulo: document.getElementById('titulo').value,
+        contenido: document.getElementById('summernote').value
+    }
+    console.log(pagina);
+    document.getElementById('tabla-paginas').innerHTML += 
+        `<tr>
+            <td></td>
+            <td>${pagina.titulo}</td>
+            <td>
+            <a href="pagesPub.html" class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></a>
+            <a href="#" class="btn btn-xs btn-warning"id="editar"><i class="fa fa-pencil"></i></a>
+            <a href="#" class="btn btn-xs btn-danger"id="eliminar"><i class="fa fa-remove"></i></a>
+            </td>
+        </tr>`;
+        
+
+}
 function agregarCategoria(){
     var ncategoria = document.getElementById('nombre-categoria').value;
     if(ncategoria ==""){
@@ -157,3 +176,6 @@ function limpiarModalCategorias(){
 
 }
 
+$( "#btn-alerta" ).click(function() {
+    alert( "Este post es privado...." );
+  });
