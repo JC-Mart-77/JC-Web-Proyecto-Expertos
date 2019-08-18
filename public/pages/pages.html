@@ -23,6 +23,10 @@
 
         <!-- Morris Charts CSS -->
         <link href="../css/morris.css" rel="stylesheet">
+        <!-- Editor Conetenido -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>  
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
 
         <!-- Custom Fonts -->
         <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -54,8 +58,8 @@
                 </button>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="#"><i class="fa fa-home fa-fw"></i> Ver Blog</a></li>
-                    <li><a href="#"><i class="fa fa-home fa-fw"></i> Nuevo Post</a></li>
+                    <li><a href="blog.html"><i class="fa fa-home fa-fw"></i> Ver Blog</a></li>
+                    <li><a href="newpost.html"><i class="fa fa-home fa-fw"></i> Nuevo Post</a></li>
                 </ul>
 
                 <ul class="nav navbar-right navbar-top-links">
@@ -195,7 +199,7 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-12">
-                    <a href="#" class="btn btn-primary" id="agregar-pagina">Agregar</a><br><br>
+                            <a data-toggle="modal" href="#add-page" class="btn btn-primary" id="agregar-pagina">Agrega Paginar</a><br><br>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-file"></i> Paginas</h3>
@@ -256,9 +260,64 @@
             <!-- /.id-wrapper-->
 </div>
         <!-- /.wrapper-->
-
+ <!-- Modal -->
+ <div class="modal fade" id="add-page" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Nueva Pagina</h4>
+            </div>
+            <div class="modal-body">
+                    <form role="form" method="post" action="#" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>Titulo</label>
+                            <input type="text" id="titulo" class="form-control" placeholder="Escriba titulo">
+                        </div>
+                        <div class="form-group">
+                            <label>Contenido</label>
+                            <div id="summernote"></div>
+                            <input type="text" id="tipo-usuario" class="form-control" style="display:none">
+                        </div>
+                        <div class="form-group">
+                            <label>Imagen destacada</label>
+                            <input type="file" id="image">
+                        </div>
+                        <div class="form-group">
+                            <label>Categorias</label>
+                            <label ><input type="checkbox" id="category_id[]" value="2"> Tecnologia</label>
+                            </div>
+                        <br>
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="is_public"> Publicar
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="accept_comments" checked> Aceptar comentarios
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="show_image"> Mostrar imagen destacada
+                            </label>
+                        </div>
+                        
+                    </form>
+                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" onclick="agregarPostUsuarios();" class="btn btn-success">Guardar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
         <!-- jQuery -->
-        <script src="../js/jquery.min.js"></script>
+
+        <script>
+                $(document).ready(function() {
+                    $('#summernote').summernote();
+                });
+              </script>
+
 
         <!-- Bootstrap Core JavaScript -->
         <script src="../js/bootstrap.min.js"></script>

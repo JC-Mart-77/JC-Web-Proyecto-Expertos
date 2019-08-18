@@ -54,8 +54,8 @@
                 </button>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="#"><i class="fa fa-home fa-fw"></i> Ver Blog</a></li>
-                    <li><a href="#"><i class="fa fa-home fa-fw"></i> Nuevo Post</a></li>
+                    <li><a href="blog.html"><i class="fa fa-home fa-fw"></i> Ver Blog</a></li>
+                    <li><a href="newpost.html"><i class="fa fa-home fa-fw"></i> Nuevo Post</a></li>
                 </ul>
 
                 <ul class="nav navbar-right navbar-top-links">
@@ -118,9 +118,9 @@
                             <i class="fa fa-user fa-fw"></i> Administrador <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            <li><a href="perfiluser.html"><i class="fa fa-user fa-fw"></i> User Profile</a>
                             </li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                            <li><a href="configuracion.html"><i class="fa fa-gear fa-fw"></i> Settings</a>
                             </li>
                             <li class="divider"></li>
                             <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -155,12 +155,16 @@
                                 <!-- /.nav-second-level -->
                             </li>
                             <li>
-                                <a href="users.html" class="active"><i class="fa fa-fw fa-users" style="color: #ffbb00" ></i> Usuarios</a>
+                                <a href="users.html" ><i class="fa fa-fw fa-users" style="color: #ffbb00" ></i> Usuarios</a>
                                 <!-- /.nav-second-level -->
                             </li>
                             <li>
                                 <a href="categorias.html" ><i class="fa fa-fw fa-th-list" style="color: #34A843" ></i> Categorias</a>
                                 <!-- /.nav-second-level -->
+                            </li>
+                            <li>
+                                <a href="editor.html" ><i class="fa fa-code" style="color: #EA4335"></i> Editor HTML, CSS, JS</a>
+                                    <!-- /.nav-second-level -->
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-fw fa-cogs" style="color: #777" ></i>Configuracion<span class="fa arrow"></span></a>
@@ -208,47 +212,25 @@
                                     <tr>
                                         <th></th>
                                         <th>Nombre</th>
-                                        <th>Nombre de usuario</th>
-                                        <th>Email</th>
-                                        <th>Tipo</th>
+                                        <th>Usuario</th>
+                                        <th>Correo</th>
+                                        <th>Tipo-Usuario</th>
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                                                            <tr>
+                                <tbody id="tabla-usuarios">
+                                    <tr>
                                         <td></td>
-                                        <td>Admin</td>
-                                        <td>admin</td>
-                                        <td></td>
-                                        <td>Administrador</td>
-                                        <td style="width:70px;">
-                                        <a href="./?r=admin/edituser&id=1" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
-                                        <a href="./?r=admin/deluser&id=1" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
-                                        </td>
+                                            <td>karlos Lope</td>
+                                            <td>klopez27</td>
+                                            <td>klopez@gamil.com</td>
+                                            <td>Administrador</td>
+                                            <td style="width:70px;">
+                                            <a href="#" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
+                                            <a href="#" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
+                                            </td>
                                     </tr>
-                                                                            <tr>
-                                        <td></td>
-                                        <td>Juan Carlos Martinez</td>
-                                        <td>jcmh</td>
-                                        <td>jcmartinezh42@gmail.com</td>
-                                        <td>Lector</td>
-                                        <td style="width:70px;">
-                                        <a href="./?r=admin/edituser&id=2" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
-                                        <a href="./?r=admin/deluser&id=2" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
-                                        </td>
-                                    </tr>
-                                                                            <tr>
-                                        <td></td>
-                                        <td>Juan Carlos Martinez</td>
-                                        <td>jcmh</td>
-                                        <td>jcmartinezh42@gmail.com</td>
-                                        <td>Autor</td>
-                                        <td style="width:70px;">
-                                        <a href="./?r=admin/edituser&id=3" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
-                                        <a href="./?r=admin/deluser&id=3" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
+                                </tbody>
                             </table>
                         </div>
                                 <!-- /.table-responsive -->                               
@@ -276,67 +258,65 @@
               <h4 class="modal-title">Nuevo usuarios</h4>
             </div>
             <div class="modal-body">
-                <form role="form" method="post" action="#" enctype="multipart/form-data">
+                <form>
                     <div class="form-group">
-                    <label>Nombre real</label>
-                    <input type="text" name="name" class="form-control" placeholder="Nombre real">
+                    <label>Nombre Completo</label>
+                    <input type="text" id="nombre" class="form-control" placeholder="Nombre real">
                     </div>
                     <div class="form-group">
                         <label>Nombre de usuario</label>
-                        <input type="text" name="username" class="form-control" placeholder="Nombre de usuario" required>
+                        <input type="text" id="apellido" class="form-control" placeholder="Nombre de usuario">
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="text" name="email" class="form-control" placeholder="Email">
+                        <input type="email" id="email" class="form-control" placeholder="Email">
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        <input type="password" id="password" class="form-control" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <label>Tipo</label>
-                        <select name="kind_id" class="form-control" required>
-                                <option value="">-- SELECCIONE TIPO --</option>
-                                <option value="1">Administrador</option>
-                                <option value="2">Autor</option>
-                                <option value="3">Lector</option>
+                        <label>Tipo Usuario</label>
+                        <select id="tipoUsuario"  class="form-control">
+                               
                         </select>
                     </div>
-
+                            
                     </form>
                 </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-success">Guardar</button>
+
+                <button type="button" onclick="agregarUsuarios();" class="btn btn-success">Guardar</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-        <!-- jQuery -->
-        <script src="../js/jquery.min.js"></script>
+<!-- jQuery -->
+<script src="../js/jquery.min.js"></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="../js/bootstrap.min.js"></script>
 
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="../js/metisMenu.min.js"></script>
+<!-- Metis Menu Plugin JavaScript -->
+<script src="../js/metisMenu.min.js"></script>
 
-        <!-- DataTables JavaScript -->
-        <script src="../js/dataTables/jquery.dataTables.min.js"></script>
-        <script src="../js/dataTables/dataTables.bootstrap.min.js"></script>
+<!-- DataTables JavaScript -->
+<script src="../js/dataTables/jquery.dataTables.min.js"></script>
+<script src="../js/dataTables/dataTables.bootstrap.min.js"></script>
 
-        <!-- Custom Theme JavaScript -->
-        <script src="../js/startmin.js"></script>
-
+<!-- Custom Theme JavaScript -->
+<script src="../js/startmin.js"></script>
+<script src="../js/validacion-users.js"></script>
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-        <script>
-            $(document).ready(function() {
-                $('#dataTables-example').DataTable({
-                        responsive: true
-                });
-            });
-        </script>
+<script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+                responsive: true
+        });
+    });
+</script>
 
     </body>
 </html>

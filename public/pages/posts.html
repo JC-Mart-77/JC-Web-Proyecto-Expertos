@@ -8,6 +8,7 @@
         <meta name="author" content="">
 
         <title>JC Web - Posts</title>
+        
 
         <!-- Bootstrap Core CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -23,6 +24,10 @@
 
         <!-- Morris Charts CSS -->
         <link href="../css/morris.css" rel="stylesheet">
+         <!-- Editor Conetenido -->
+         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>  
+         <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
+         <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
 
         <!-- Custom Fonts -->
         <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -54,8 +59,8 @@
                 </button>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="#"><i class="fa fa-home fa-fw"></i> Ver Blog</a></li>
-                    <li><a href="#"><i class="fa fa-home fa-fw"></i> Nuevo Post</a></li>
+                    <li><a href="blog.html"><i class="fa fa-home fa-fw"></i> Ver Blog</a></li>
+                    <li><a href="newpost.html"><i class="fa fa-home fa-fw"></i> Nuevo Post</a></li>
                 </ul>
 
                 <ul class="nav navbar-right navbar-top-links">
@@ -118,9 +123,9 @@
                             <i class="fa fa-user fa-fw"></i> Administrador <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            <li><a href="perfiluser.html"><i class="fa fa-user fa-fw"></i> User Profile</a>
                             </li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                            <li><a href="configuracion.html"><i class="fa fa-gear fa-fw"></i> Settings</a>
                             </li>
                             <li class="divider"></li>
                             <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -138,7 +143,7 @@
                                 <a href="index.html" ><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             <li>
-                                <a href="posts.html" class="active"><i class="fa fa-asterisk" style="color:#EA4335"></i> Posts</a>
+                                <a href="posts.html" ><i class="fa fa-asterisk" style="color:#EA4335"></i> Posts</a>
                             </li>
                             <li>
                                 <a href="gallery.html" ><i class="fa fa-fw fa-picture-o" style="color: #ffbb00"></i> Galeria</a>
@@ -161,6 +166,10 @@
                             <li>
                                 <a href="categorias.html"><i class="fa fa-fw fa-th-list" style="color: #34A843" ></i> Categorias</a>
                                 <!-- /.nav-second-level -->
+                            </li>
+                            <li>
+                                <a href="editor.html" ><i class="fa fa-code" style="color: #EA4335"></i> Editor HTML, CSS, JS</a>
+                                    <!-- /.nav-second-level -->
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-fw fa-cogs" style="color: #777" ></i>Configuracion<span class="fa arrow"></span></a>
@@ -195,6 +204,7 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-12">
+                        <a data-toggle="modal" href="#add-post" class="btn btn-primary" >Nuevo Post</a><br><br>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-asterisk"></i> Post</h3>
@@ -207,13 +217,17 @@
                                     <tr>
                                         <th></th>
                                         <th>Titulo</th>
+                                        <th>Autor</th>
+                                        <th>Fecha</th>
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="tabla-posts">
                                     <tr>
                                         <td>1</td>
                                         <td>samuel</td>
+                                        <td>samuel</td>
+                                        <td>12/12/2012</td>
                                         <td>
                                         <a href="#" class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></a>
                                         <a href="#" class="btn btn-xs btn-warning"id="editar"><i class="fa fa-pencil"></i></a>
@@ -223,83 +237,15 @@
                                         <tr>
                                         <td>2</td>
                                         <td>Es es mi nuevo Articulo</td>
+                                        <td>samuel</td>
+                                        <td>12/12/2012</td>
                                         <td>
                                         <a href="#" class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></a>
                                         <a href="#" class="btn btn-xs btn-warning"id="editar"><i class="fa fa-pencil"></i></a>
                                         <a href="#" class="btn btn-xs btn-danger"id="eliminar"><i class="fa fa-remove"></i></a>
                                     </tr>
-                                    </tr>
-                                        </tr>
-                                        <tr>
-                                        <td>2</td>
-                                        <td>Es es mi nuevo Articulo</td>
-                                        <td>
-                                        <a href="#" class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></a>
-                                        <a href="#" class="btn btn-xs btn-warning"id="editar"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="btn btn-xs btn-danger"id="eliminar"><i class="fa fa-remove"></i></a>
-                                        </td>
-                                    </tr>
-                                        <tr>
-                                        <td>3</td>
-                                        <td>Bienvenido a JC Web crea, modifica</td>
-                                        <td>
-                                        <a href="#" class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></a>
-                                        <a href="#" class="btn btn-xs btn-warning"id="editar"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="btn btn-xs btn-danger"id="eliminar"><i class="fa fa-remove"></i></a>
-                                        </td>
-                                    </tr>
-                                        <tr>
-                                        <td>4</td>
-                                        <td>Por que WOLF</td>
-                                        <td>
-                                        <a href="#" class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></a>
-                                        <a href="#" class="btn btn-xs btn-warning"id="editar"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="btn btn-xs btn-danger"id="eliminar"><i class="fa fa-remove"></i></a>
-                                        </td>
-                                        <tr>
-                                        <td>2</td>
-                                        <td>Es es mi nuevo Articulo</td>
-                                        <td>
-                                        <a href="#" class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></a>
-                                        <a href="#" class="btn btn-xs btn-warning"id="editar"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="btn btn-xs btn-danger"id="eliminar"><i class="fa fa-remove"></i></a>
-                                        </td>
-                                    </tr>
-                                        <tr>
-                                        <td>3</td>
-                                        <td>Bienvenido a JC Web crea, modifica</td>
-                                        <td>
-                                        <a href="#" class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></a>
-                                        <a href="#" class="btn btn-xs btn-warning"id="editar"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="btn btn-xs btn-danger"id="eliminar"><i class="fa fa-remove"></i></a>
-                                        </td>
-                                    </tr>
-                                        <tr>
-                                        <td>4</td>
-                                        <td>Por que WOLF</td>
-                                        <td>
-                                        <a href="#" class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></a>
-                                        <a href="#" class="btn btn-xs btn-warning"id="editar"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="btn btn-xs btn-danger"id="eliminar"><i class="fa fa-remove"></i></a>
-                                        </td>
-                                        <tr>
-                                        <td>3</td>
-                                        <td>Bienvenido a JC Web crea, modifica</td>
-                                        <td>
-                                        <a href="#" class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></a>
-                                        <a href="#" class="btn btn-xs btn-warning"id="editar"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="btn btn-xs btn-danger"id="eliminar"><i class="fa fa-remove"></i></a>
-                                        </td>
-                                    </tr>
-                                        <tr>
-                                        <td>4</td>
-                                        <td>Por que WOLF</td>
-                                        <td>
-                                        <a href="#" class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></a>
-                                        <a href="#" class="btn btn-xs btn-warning"id="editar"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="btn btn-xs btn-danger"id="eliminar"><i class="fa fa-remove"></i></a>
-                                        </td>
-                                    </tr>
+                                    
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -316,10 +262,72 @@
             <!-- /.id-wrapper-->
 </div>
         <!-- /.wrapper -->
-
-        <!-- jQuery -->
-        <script src="../js/jquery.min.js"></script>
-
+ <!-- Modal -->
+ <div class="modal fade" id="add-post" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Nuevo Post</h4>
+            </div>
+            <div class="modal-body">
+                    <form role="form" method="post" action="#" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>Titulo</label>
+                            <input type="text" id="titulo" class="form-control" placeholder="Escriba titulo">
+                        </div>
+                        <div class="form-group">
+                                <label>Autor</label>
+                                <input type="text" id="autor" class="form-control" placeholder="Nombre Autor">
+                        </div>
+                        <div class="form-group">
+                                <label>Fecha Publicacion</label>
+                                <input type="date" id="fecha" class="form-control" placeholder="Fecha Publicacion">
+                            </div>
+                        <div class="form-group">
+                            <label>Contenido</label>
+                            <div id="summernote"></div>
+                            <input type="text" id="tipo-usuario" class="form-control" style="display:none">
+                        </div>
+                        <div class="form-group">
+                            <label>Imagen destacada</label>
+                            <input type="file" id="image">
+                        </div>
+                        <div class="form-group">
+                            <label>Categorias</label>
+                            <label ><input type="checkbox" id="category_id[]" value="2"> Tecnologia</label>
+                            </div>
+                        <br>
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="is_public"> Publicar
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="accept_comments" checked> Aceptar comentarios
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="show_image"> Mostrar imagen destacada
+                            </label>
+                        </div>
+                        
+                    </form>
+                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" onclick="agregarPostUsuarios();" class="btn btn-success">Guardar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
+      </script>
+      
+       
+      
         <!-- Bootstrap Core JavaScript -->
         <script src="../js/bootstrap.min.js"></script>
 
@@ -332,7 +340,7 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="../js/startmin.js"></script>
-
+        <script src="../js/validacionPots.js"></script>
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
         <script>
             $(document).ready(function() {
@@ -341,6 +349,7 @@
                 });
             });
         </script>
-
+     
+    
     </body>
 </html>

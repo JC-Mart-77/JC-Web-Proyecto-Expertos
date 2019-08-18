@@ -7,13 +7,14 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>JC Web - Pages</title>
+        <title>JC Web - Categorias</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
 
         <!-- MetisMenu CSS -->
         <link href="../css/metisMenu.min.css" rel="stylesheet">
+        
 
         <!-- Timeline CSS -->
         <link href="../css/timeline.css" rel="stylesheet">
@@ -28,6 +29,7 @@
         <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link rel="shortcut icon" type="image/png" href="../img/icono.png"/>
         <link href="../css/estilos.css" rel="stylesheet">
+        
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -54,8 +56,8 @@
                 </button>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="#"><i class="fa fa-home fa-fw"></i> Ver Blog</a></li>
-                    <li><a href="#"><i class="fa fa-home fa-fw"></i> Nuevo Post</a></li>
+                    <li><a href="blog.html"><i class="fa fa-home fa-fw"></i> Ver Blog</a></li>
+                    <li><a href="newpost.html"><i class="fa fa-home fa-fw"></i> Nuevo Post</a></li>
                 </ul>
 
                 <ul class="nav navbar-right navbar-top-links">
@@ -118,9 +120,9 @@
                             <i class="fa fa-user fa-fw"></i> Administrador <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            <li><a href="perfiluser.html"><i class="fa fa-user fa-fw"></i> User Profile</a>
                             </li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                            <li><a href="configuracion.html"><i class="fa fa-gear fa-fw"></i> Settings</a>
                             </li>
                             <li class="divider"></li>
                             <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -159,8 +161,12 @@
                                 <!-- /.nav-second-level -->
                             </li>
                             <li>
-                                <a href="categorias.html" class="active"><i class="fa fa-fw fa-th-list" style="color: #34A843" ></i> Categorias</a>
+                                <a href="categorias.html" ><i class="fa fa-fw fa-th-list" style="color: #34A843" ></i> Categorias</a>
                                 <!-- /.nav-second-level -->
+                            </li>
+                            <li>
+                                <a href="editor.html" ><i class="fa fa-code" style="color: #EA4335"></i> Editor HTML, CSS, JS</a>
+                                    <!-- /.nav-second-level -->
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-fw fa-cogs" style="color: #777" ></i>Configuracion<span class="fa arrow"></span></a>
@@ -211,9 +217,9 @@
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="tabla-categorias">
                                     <tr>
-                                        <td>1</td>
+                                        <td></td>
                                         <td>Tecnologia</td>
                                         <td>                                   
                                         <a href="#" class="btn btn-xs btn-warning" id="editar"><i class="fa fa-pencil"></i></a>
@@ -221,7 +227,7 @@
                                         </td>
                                     </tr>
                                         <tr>
-                                        <td>2</td>
+                                        <td></td>
                                         <td>Investigacion</td>
                                         <td>                                      
                                         <a href="#" class="btn btn-xs btn-warning" id="editar"><i class="fa fa-pencil"></i></a>
@@ -230,7 +236,7 @@
                                     </tr>
                                         </tr>
                                         <tr>
-                                        <td>2</td>
+                                        <td></td>
                                         <td>Desarrollo Web</td>
                                         <td>
                                         <a href="#" class="btn btn-xs btn-warning"id="editar"><i class="fa fa-pencil"></i></a>
@@ -266,13 +272,13 @@
                 <form role="form" method="post" action="#">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nombre</label>
-                    <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Nombre">
+                    <input type="text" id="nombre-categoria" class="form-control"  placeholder="Nombre">
                 </div>
                 </form>
             </div>
             <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" onclick=" agregarCategoria();"class="btn btn-success">Guardar</button>
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -293,7 +299,7 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="../js/startmin.js"></script>
-
+        <script src="../js/controlador.js"></script>
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
         <script>
             $(document).ready(function() {

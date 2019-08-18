@@ -73,14 +73,18 @@ form, p{
     color: #fff;
     background-color: #34A843!important;
     padding: 31px;
+   
 
 }
 .panel-green{
     border-color: #34A843!important;
+    background-color: #34A843!important;
+    color: white!important;
 
 }
 .panel-green a {
     color: #34A843!important;
+
 }
 .panel-yellow .panel-heading{
     color: #fff;
@@ -148,6 +152,18 @@ form, p{
     color: white;
     background-color:#34A843!important;
     border-color: #34A843!important;
+}
+.is-valid{
+    border-color: #34A843;
+    border-width: 2px;
+}
+.is-invalid{
+    border-color: #ea4335;
+    border-width: 2px;
+}
+
+.pagina-principal,.pagina-principal p{
+    text-align: center;
 }
 
 
