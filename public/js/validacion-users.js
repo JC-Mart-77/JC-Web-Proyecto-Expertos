@@ -48,7 +48,7 @@ function marcarInput(id, valido) {
       document.getElementById(id).classList.add('is-valid');
   }
 }
-function agregarUsuarios() {
+/*function agregarUsuarios() {
   
  
   let persona = {
@@ -73,14 +73,15 @@ console.log(persona);
             </td>
         </tr>`;
         limpiarModalUsuarios();
-}
+}*/
 
 
-function limpiarModalUsuarios(){
+function limpiarModalUsuarios(id){
   document.getElementById('nombre').value='';
   document.getElementById('apellido').value='';
   document.getElementById('email').value='';
   document.getElementById('password').value='';
   document.getElementById('tipoUsuario').value='';
+  document.getElementById(id).classList.remove('is-valid');
 
 }

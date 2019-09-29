@@ -26,7 +26,7 @@ $(window).load(function(){
      });
 function fileValidation() {
    
-    var fileInput = document.getElementById('customFile');
+    var fileInput = document.getElementById('archivo');
     var filePath = fileInput.value;
     var allowedExtensions = /(.pdf|.mp4|.jpg|.jpeg|.png|.gif)$/i;
     console.log(filePath);
@@ -44,7 +44,7 @@ function fileValidation() {
             var reader = new FileReader();
             if (fileInput.files[0].type == "application/mp4") {
                 reader.onload = function(e) {
-                    document.getElementById('imagePreview').innerHTML +=  
+                    document.getElementById('tabla-imagenes').innerHTML +=  
                     `<tr>
                     <td></td>
                     <td><img src="../img/icono-pdf.png" style="width: 80px; height: 80px;"></td>
@@ -58,7 +58,7 @@ function fileValidation() {
             } else {
                 if (fileInput.files[0].type == "application/pdf") {
                     reader.onload = function(e) {
-                        document.getElementById('imagePreview').innerHTML +=  
+                        document.getElementById('tabla-imagenes').innerHTML +=  
                         `<tr>
                         <td></td>
                         <td><img src="../img/icono-pdf.png" style="width: 80px; height: 80px;"></td>
@@ -71,7 +71,7 @@ function fileValidation() {
                     };
                 } else {
                 reader.onload = function(e) {
-                    document.getElementById('imagePreview').innerHTML += `<tr>
+                    document.getElementById('tabla-imagenes').innerHTML += `<tr>
                     <td></td>
                     <td><img src="` + e.target.result + `" style="width: 120px; height: 120px;"/></td>
                     <td>` + fileInput.files[0].name + `/td>

@@ -173,7 +173,6 @@ function limpiarModalUsuarios(){
 function limpiarModalCategorias(){
     document.getElementById('nombre-categoria').value='';
 
-
 }
 
 $( "#btn-alerta" ).click(function() {

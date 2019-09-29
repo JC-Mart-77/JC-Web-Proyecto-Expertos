@@ -46,143 +46,8 @@
         <div id="wrapper">
 
             <!-- Navigation -->
-            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html"><img src="../img/logo1.png" class="img-fluid-top" width="100px" height="40px"></a>
-                </div>
-
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="blog.html"><i class="fa fa-home fa-fw"></i> Ver Blog</a></li>
-                    <li><a href="newpost.html"><i class="fa fa-home fa-fw"></i> Nuevo Post</a></li>
-                </ul>
-
-                <ul class="nav navbar-right navbar-top-links">
-                    <li class="dropdown navbar-inverse">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu dropdown-alerts">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-comment fa-fw"></i> New Comment
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                        <span class="pull-right text-muted small">12 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-tasks fa-fw"></i> New Task
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>See All Alerts</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user fa-fw"></i> Administrador <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="perfiluser.html"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                            </li>
-                            <li><a href="configuracion.html"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- /.navbar-top-links -->
-
-                <div class="navbar-default sidebar" role="navigation">
-                    <div class="sidebar-nav navbar-collapse">
-                        <ul class="nav" id="side-menu">
-
-                            <li>
-                                <a href="index.html" ><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="posts.html" ><i class="fa fa-asterisk" style="color:#EA4335"></i> Posts</a>
-                            </li>
-                            <li>
-                                <a href="gallery.html" ><i class="fa fa-fw fa-picture-o" style="color: #ffbb00"></i> Galeria</a>
-                            </li>
-                            <li>
-                                <a href="pages.html" ><i class="fa fa-fw fa-file" style="color: #34A843" ></i> Paginas</a>
-                            </li>
-                            <li>
-                                <a href="comments.html"><i class="fa fa-comment fa-fw"></i>Comentarios</a>
-                                <!-- /.nav-second-level -->
-                            </li>
-                            <li>
-                                <a href="mensajes.html"><i class="fa fa-fw fa-envelope" style="color: #EA4335" ></i> Mensajes</a>
-                                <!-- /.nav-second-level -->
-                            </li>
-                            <li>
-                                <a href="users.html"><i class="fa fa-fw fa-users" style="color: #ffbb00" ></i> Usuarios</a>
-                                <!-- /.nav-second-level -->
-                            </li>
-                            <li>
-                                <a href="categorias.html" ><i class="fa fa-fw fa-th-list" style="color: #34A843" ></i> Categorias</a>
-                                <!-- /.nav-second-level -->
-                            </li>
-                            <li>
-                                <a href="editor.html" ><i class="fa fa-code" style="color: #EA4335"></i> Editor HTML, CSS, JS</a>
-                                    <!-- /.nav-second-level -->
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-fw fa-cogs" style="color: #777" ></i>Configuracion<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="configuracion.html">General</a>
-                                    </li>
-                                </ul>
-                                <!-- /.nav-second-level -->
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="include-navbar">
+                <!-- Aqui se incliye el navbar y el sidebar --> 
             </nav>
 
             <div id="page-wrapper">
@@ -313,16 +178,16 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
->
+
         <!-- jQuery -->
 
-        <script src="../js/jquery.min.js"></script>
+<script src="../js/jquery.min.js"></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="../js/bootstrap.min.js"></script>
 
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="../js/metisMenu.min.js"></script>
+<!-- Metis Menu Plugin JavaScript -->
+<script src="../js/metisMenu.min.js"></script>
 
 <script src ="../js/popper.min.js"></script>
 
@@ -334,16 +199,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ace.js" charset="UTF-8"></script> 
 <script src="../js/controlador-editor.js"></script>
 
-        <!-- DataTables JavaScript -->
-        <script src="../js/dataTables/jquery.dataTables.min.js"></script>
-        <script src="../js/dataTables/dataTables.bootstrap.min.js"></script>
+<!-- DataTables JavaScript -->
+<script src="../js/dataTables/jquery.dataTables.min.js"></script>
+<script src="../js/dataTables/dataTables.bootstrap.min.js"></script>
 
-        <!-- Custom Theme JavaScript -->
-        <script src="../js/startmin.js"></script>
-        <script src="../js/subirImg.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="../js/startmin.js"></script>
+<script src="../js/subirImg.js"></script>
 
-        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-     
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script>
+    $(document).ready(function () {
+        $('#include-navbar').load('../includes/navbar.html');
+    });
+</script>
 
     </body>
 </html>

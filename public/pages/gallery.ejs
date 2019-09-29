@@ -38,7 +38,7 @@
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script>
-  /*$(document).ready(function() {
+  $(document).ready(function() {
      $('#uploadForm').click(function() {
 		 $("#status").empty().text("File is uploading...");
 
@@ -57,7 +57,7 @@
 
 	return false;
     });    
-});*/
+});
   </script>
         
     </head>
@@ -96,7 +96,7 @@
                                 <input type="file" class="form-control" name="img" id="archivo" onchange="return fileValidation();">
                             </div>
                             <div class="form-group">  
-                                <button type=" button" name="button" class="btn btn-primary" id="btn-subir-img" onchange="return fileValidation();">Subir imgen</button>
+                                <button type=" button" name="submit" class="btn btn-primary" id="btn-subir-img" onchange="return fileValidation();">Subir imgen</button>
                                 <br><br>
                             </div>
                         </form>   
@@ -118,17 +118,17 @@
                                         </tr>
                                     </thead>
                                     <tbody id="tabla-imagenes">
-                                        
+                                        <% images.forEach(function (image) { %>
                                             <tr>
                                                 <td></td>
-                                                <td><img src="../img/background1.jpg" style="width:120px";></td>
-                                                <td>Diseño Web HTML CSS JavaScript</td>
+                                                <td><img src="<%= image.path %>" style="width:120px";></td>
+                                                <td><%= image.title %></td>
                                                 <td>                                   
                                                 <a href="" onclick="editar(event, '${res._id}');"class="btn btn-xs btn-warning" id="editar"><i class="fa fa-pencil"></i></a>
                                                 <a href="" onclick="eliminar(event, '${res._id}');"class="btn btn-xs btn-danger" id="eliminar"><i class="fa fa-remove"></i></a>
                                                 </td>
                                                 </tr>
-                                            
+                                        <% }) %>
                                     </tbody>
                                 </table>
                         </div>
@@ -165,9 +165,8 @@
         <script src="../js/sweetalert2.min.js"></script>
 
         <!--<script src="../js/subirImg.js"></script>-->
-        <script src="../js/controlador-galeria.js"></script>
-        <script src="../js/subirImg.js"></script>      
-         
+        <script src="../js/controlador-galeria.js"></script>       
+         <script src="../js/subirImg.js"></script>
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
         <script>
             $(document).ready(function() {
@@ -178,7 +177,7 @@
         </script>
         <script>
             $(document).ready(function () {
-                $('#include-navbar').load('../includes/navbar.html');
+                $('#include-navbar').load('../includes/navbar.ejs');
             });
         </script>
         

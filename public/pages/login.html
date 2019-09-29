@@ -30,16 +30,16 @@
         <h5>Iniciar Sesion</h5>
       </div>
       <div class="card-body">
-        <form>
+        <form id="formLog">
           <div class="form-group">
             <div class="form-label-group">
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
+              <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" >
               <label for="inputEmail">Correo Electronico:</label>
             </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+              <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="required" >
               <label for="inputPassword">Password:</label>
               <div id="error" class=" alert alert-danger " role="alert " style="display:none;">
                 !Usuario o contrasenia incorecta!
@@ -54,7 +54,7 @@
               </label>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" onclick="loginSesion();" id="btn-ingresar" style="color: white;">Iniciar Sesion</a>
+          <button type="button" class="btn btn-primary" id="btn-login" style="color: white;">Iniciar Sesion</button>
           
         </form>
         <div class="text-center">
@@ -72,10 +72,11 @@
   <!-- Bootstrap core JavaScript-->
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
   <!-- Core plugin JavaScript-->
   <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="../js/login.js"></script>
+  <script src="../js/sweetalert2.all.min.js"></script>
+  <script src="../js/sweetalert2.min.js"></script>
+  <script src="../js/controlador-log.js"></script>
 
 </body>
 

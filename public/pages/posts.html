@@ -40,149 +40,30 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <script>
+                window.onload = function(){
+                var fecha = new Date(); //Fecha actual
+                var mes = fecha.getMonth()+1; //obteniendo mes
+                var dia = fecha.getDate(); //obteniendo dia
+                var ano = fecha.getFullYear(); //obteniendo año
+                if(dia<10)
+                    dia='0'+dia; //agrega cero si el menor de 10
+                if(mes<10)
+                    mes='0'+mes //agrega cero si el menor de 10
+                document.getElementById('fechaActual').value=ano+"-"+mes+"-"+dia;
+                }
+            
+            </script>
+
+       
     </head>
     <body>
 
         <div id="wrapper">
 
             <!-- Navigation -->
-            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html"><img src="../img/logo1.png" class="img-fluid-top" width="100px" height="40px"></a>
-                </div>
-
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="blog.html"><i class="fa fa-home fa-fw"></i> Ver Blog</a></li>
-                    <li><a href="newpost.html"><i class="fa fa-home fa-fw"></i> Nuevo Post</a></li>
-                </ul>
-
-                <ul class="nav navbar-right navbar-top-links">
-                    <li class="dropdown navbar-inverse">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu dropdown-alerts">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-comment fa-fw"></i> New Comment
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                        <span class="pull-right text-muted small">12 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-tasks fa-fw"></i> New Task
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>See All Alerts</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user fa-fw"></i> Administrador <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="perfiluser.html"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                            </li>
-                            <li><a href="configuracion.html"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- /.navbar-top-links -->
-
-                <div class="navbar-default sidebar" role="navigation">
-                    <div class="sidebar-nav navbar-collapse">
-                        <ul class="nav" id="side-menu">
-
-                            <li>
-                                <a href="index.html" ><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="posts.html" ><i class="fa fa-asterisk" style="color:#EA4335"></i> Posts</a>
-                            </li>
-                            <li>
-                                <a href="gallery.html" ><i class="fa fa-fw fa-picture-o" style="color: #ffbb00"></i> Galeria</a>
-                            </li>
-                            <li>
-                                <a href="pages.html"><i class="fa fa-fw fa-file" style="color: #34A843" ></i> Paginas</a>
-                            </li>
-                            <li>
-                                <a href="comments.html"><i class="fa fa-comment fa-fw"></i>Comentarios</a>
-                                <!-- /.nav-second-level -->
-                            </li>
-                            <li>
-                                <a href="mensajes.html"><i class="fa fa-fw fa-envelope" style="color: #EA4335" ></i> Mensajes</a>
-                                <!-- /.nav-second-level -->
-                            </li>
-                            <li>
-                                <a href="users.html"><i class="fa fa-fw fa-users" style="color: #ffbb00" ></i> Usuarios</a>
-                                <!-- /.nav-second-level -->
-                            </li>
-                            <li>
-                                <a href="categorias.html"><i class="fa fa-fw fa-th-list" style="color: #34A843" ></i> Categorias</a>
-                                <!-- /.nav-second-level -->
-                            </li>
-                            <li>
-                                <a href="editor.html" ><i class="fa fa-code" style="color: #EA4335"></i> Editor HTML, CSS, JS</a>
-                                    <!-- /.nav-second-level -->
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-fw fa-cogs" style="color: #777" ></i>Configuracion<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="configuracion.html">General</a>
-                                    </li>
-                                </ul>
-                                <!-- /.nav-second-level -->
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="include-navbar">
+              <!-- Aqui se incliye el navbar y el sidebar --> 
             </nav>
 
             <div id="page-wrapper">
@@ -223,27 +104,6 @@
                                     </tr>
                                 </thead>
                                 <tbody id="tabla-posts">
-                                    <tr>
-                                        <td>1</td>
-                                        <td>samuel</td>
-                                        <td>samuel</td>
-                                        <td>12/12/2012</td>
-                                        <td>
-                                        <a href="#" class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></a>
-                                        <a href="#" class="btn btn-xs btn-warning"id="editar"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="btn btn-xs btn-danger"id="eliminar"><i class="fa fa-remove"></i></a>
-                                        </td>
-                                    </tr>
-                                        <tr>
-                                        <td>2</td>
-                                        <td>Es es mi nuevo Articulo</td>
-                                        <td>samuel</td>
-                                        <td>12/12/2012</td>
-                                        <td>
-                                        <a href="#" class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></a>
-                                        <a href="#" class="btn btn-xs btn-warning"id="editar"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="btn btn-xs btn-danger"id="eliminar"><i class="fa fa-remove"></i></a>
-                                    </tr>
                                     
                                     
                                 </tbody>
@@ -256,10 +116,14 @@
                         <!-- /.panel -->
             </div>
                     <!-- /.col-lg-12 -->
+                    <div id="mostrarPost">
+      
+                    </div>
         </div>
                 <!-- /.row -->
     </div>
             <!-- /.id-wrapper-->
+            
 </div>
         <!-- /.wrapper -->
  <!-- Modal -->
@@ -271,31 +135,38 @@
               <h4 class="modal-title">Nuevo Post</h4>
             </div>
             <div class="modal-body">
-                    <form role="form" method="post" action="#" enctype="multipart/form-data">
+                    <form id="registrarPost">
                         <div class="form-group">
                             <label>Titulo</label>
-                            <input type="text" id="titulo" class="form-control" placeholder="Escriba titulo">
+                            <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Escriba titulo">
+                            <input type="text" id="_id" class="form-control">
                         </div>
                         <div class="form-group">
                                 <label>Autor</label>
-                                <input type="text" id="autor" class="form-control" placeholder="Nombre Autor">
+                                <input type="text" name="autor" id="autor" class="form-control" placeholder="Nombre Autor">
                         </div>
                         <div class="form-group">
                                 <label>Fecha Publicacion</label>
-                                <input type="date" id="fecha" class="form-control" placeholder="Fecha Publicacion">
+                                <input type="date" name="fecha" id="fechaActual" class="form-control" placeholder="Fecha Publicacion">
                             </div>
                         <div class="form-group">
                             <label>Contenido</label>
-                            <div id="summernote"></div>
-                            <input type="text" id="tipo-usuario" class="form-control" style="display:none">
+                            <div name="contenido" id="summernote"></div>
+                            <!--<textarea class="form-control" name="contenido" id="contenido" cols="10" rows="5"></textarea>-->
                         </div>
                         <div class="form-group">
                             <label>Imagen destacada</label>
-                            <input type="file" id="image">
+                            <select class="form-control" name="imagenes" id="imagenes">
+                                    
+                            </select>
+                            <!--<input type="file" name="imagen" id="image">-->
                         </div>
                         <div class="form-group">
                             <label>Categorias</label>
-                            <label ><input type="checkbox" id="category_id[]" value="2"> Tecnologia</label>
+                            <select class="form-control" name="categorias" id="categorias">
+
+                            </select>
+                            <!--<label ><input type="checkbox" id="category_id[]" value="2"> Tecnologia</label>-->
                             </div>
                         <br>
                         <div class="form-group">
@@ -314,41 +185,53 @@
                     </form>
                 </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" onclick="agregarPostUsuarios();" class="btn btn-success">Guardar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" id="btn-registrar-posts" class="btn btn-success">Guardar</button>
+                <button type="button" style="display:none"  onclick="actualizarPosts();" id="btn-modificar-posts" class="btn btn-success">Actualizar</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
+   
 </div><!-- /.modal -->
+
+
 <script>
         $(document).ready(function() {
             $('#summernote').summernote();
         });
-      </script>
+ </script>
       
        
-      
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../js/bootstrap.min.js"></script>
 
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="../js/metisMenu.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="../js/bootstrap.min.js"></script>
 
-        <!-- DataTables JavaScript -->
-        <script src="../js/dataTables/jquery.dataTables.min.js"></script>
-        <script src="../js/dataTables/dataTables.bootstrap.min.js"></script>
+<!-- Metis Menu Plugin JavaScript -->
+<script src="../js/metisMenu.min.js"></script>
 
-        <!-- Custom Theme JavaScript -->
-        <script src="../js/startmin.js"></script>
-        <script src="../js/validacionPots.js"></script>
-        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-        <script>
-            $(document).ready(function() {
-                $('#dataTables-example').DataTable({
-                        responsive: true
+<!-- DataTables JavaScript -->
+<script src="../js/dataTables/jquery.dataTables.min.js"></script>
+<script src="../js/dataTables/dataTables.bootstrap.min.js"></script>
+<script src="../js/sweetalert2.all.min.js"></script>
+<script src="../js/sweetalert2.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../js/startmin.js"></script>
+<script src="../js/controlador-posts.js"></script>
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+                responsive: true
                 });
             });
-        </script>
+</script>
+<script>
+    $(document).ready(function () {
+        $('#include-navbar').load('../includes/navbar.html');
+    });
+</script>
+
      
     
     </body>
