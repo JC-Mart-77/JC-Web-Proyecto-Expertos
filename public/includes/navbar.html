@@ -15,63 +15,11 @@
 </ul>
 
 <ul class="nav navbar-right navbar-top-links">
-    <li class="dropdown navbar-inverse">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu dropdown-alerts">
-            <li>
-                <a href="#">
-                    <div>
-                        <i class="fa fa-comment fa-fw"></i> New Comment
-                        <span class="pull-right text-muted small">4 minutes ago</span>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div>
-                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                        <span class="pull-right text-muted small">12 minutes ago</span>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div>
-                        <i class="fa fa-envelope fa-fw"></i> Message Sent
-                        <span class="pull-right text-muted small">4 minutes ago</span>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div>
-                        <i class="fa fa-tasks fa-fw"></i> New Task
-                        <span class="pull-right text-muted small">4 minutes ago</span>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div>
-                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                        <span class="pull-right text-muted small">4 minutes ago</span>
-                    </div>
-                </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a class="text-center" href="#">
-                    <strong>See All Alerts</strong>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </li>
+ 
     <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="fa fa-user fa-fw"></i> Administrador <b class="caret"></b>
+      
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="nombre-usuario">
+            Nombre
         </a>
         <ul class="dropdown-menu dropdown-user">
             <li><a href="perfiluser.html"><i class="fa fa-user fa-fw"></i> Perfil Usuario</a>
@@ -79,7 +27,7 @@
             <li><a href="configuracion.html"><i class="fa fa-gear fa-fw"></i> Configuracion</a>
             </li>
             <li class="divider"></li>
-            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
+            <li><a  href="/logout" ><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
             </li>
         </ul>
     </li>
@@ -90,6 +38,11 @@
     <div class="sidebar-nav navbar-collapse">
     <ul class="nav" id="side-menu">
 
+        <li>
+           
+            <center><img id="img-usuario"class="img-circle" width="50px" height="50px" src="../img/user.webp">
+                <h4 id="usuario" class="profile-title">Nombre</h4></center>
+        </li>
         <li>
             <a href="index.html" ><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
         </li>
@@ -129,3 +82,23 @@
     </ul>
 </div>
 </div>
+<script>
+
+function nombre(){
+	$.ajax({
+		url:"/nombre",
+		method:"get",
+		dataType:"json",
+		success:function(res){
+			document.getElementById("nombre-usuario").innerHTML=`<i class="fa fa-user fa-fw"></i> ${res[0].nombre} <b class="caret"></b>`;  
+            document.getElementById("usuario").innerHTML= res[0].nombre;  
+        },
+	}); 
+}
+
+$(document).ready(function(){ 
+        nombre(); 
+        
+    });
+        
+</script>

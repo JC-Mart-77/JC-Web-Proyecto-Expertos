@@ -17,14 +17,13 @@
         if (!campos[i].valido)
             return;
     }
-    var campos2= $("#registrarPost").serialize() + "&nombreCategoria="+$("#categorias option:selected").text()+
-    "&nombreImagen="+$("#imagenes option:selected").text()+"&contenido="+ $($("#summernote").summernote("code")).text();
+    var campos2= $("#registrarPost").serialize() +"&contenido="+ $("#summernote").summernote("code");
     
     console.log("Información a guardar: " + campos2);
     $.ajax({
         url:"/post/add-posts",
         method:"POST",
-        data:campos2 + "&nombreCategoria",
+        data:campos2,
         dataType:"json",
         success: function(res){
             console.log(res);
@@ -37,9 +36,13 @@
                     <td>${res.autor}</td>
                     <td>${res.fecha}</td>
                     <td>
-                    <a href="pagesPost.html" onclick="mostrar(event, '${res._id}');"class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></a>
-                    <a href="" onclick="editar(event, '${res._id}');" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
-                    <a href="" onclick="eliminar(event, '${res._id}');" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
+                    <form action="pagesPost.html" method="GET">
+                        <input type="hidden" id="_id" name="_id" value="${res._id}">
+                        <button type="subtmit" class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></button>
+                    
+                        <a href="" onclick="editar(event, '${res._id}');" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
+                        <a href="" onclick="eliminar(event, '${res._id}');" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
+                    </form>
                     </td>
                 </tr>`;
           
@@ -61,16 +64,17 @@
 
 function actualizarPosts(){
     document.getElementById('tabla-posts').innerHTML ='';
-    var campos2= $("#registrarPost").serialize();
+    var campos2= $("#registrarPost").serialize()+ "&contenido="+ $("#summernote").summernote("code");
     console.log("Información a modificar: " + campos2);
+   
     $.ajax({
-        url:`/post/${document.getElementById('_id').value}`,
+        url:`/post/modificar/${document.getElementById('codigo').value}`,
         method:"PUT",
         data:campos2,
         dataType:"json",
         success: function(res){
             console.log(res);
-            console.log("se modifico la categoria");
+            console.log("se modifico el post");
             
             Swal.fire({
                 position: 'center',
@@ -98,9 +102,13 @@ function generarPosts(informacion){
             <td>${informacion[i].autor}</td>
             <td>${informacion[i].fecha}</td>
             <td>
-            <a href="" onclick="mostrar(event, '${informacion[i]._id}');"class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></a>
-            <a href="" onclick="editar(event, '${informacion[i]._id}');" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
-            <a href="" onclick="eliminar(event, '${informacion[i]._id}');" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
+            <form action="pagesPost.html" method="GET">
+                <input type="hidden" id="_id" name="_id" value="${informacion[i]._id}">
+                <button type="subtmit" class="btn btn-xs btn-default"id="ver"><i class="fa fa-eye"></i></button>
+            
+                <a href="" onclick="editar(event, '${informacion[i]._id}');" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
+                <a href="" onclick="eliminar(event, '${informacion[i]._id}');" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
+            </form>
             </td>
         </tr>`;
     }
@@ -133,7 +141,7 @@ $(document).ready(function(){
             console.log(res);
             for (var i=0; i<res.length; i++){
                 $("#categorias").append(
-                    `<option value="${res[i]._id}">${res[i].nombre}</option>`
+                    `<option value="${res[i].nombre}">${res[i].nombre}</option>`
                 );
                 
             }
@@ -146,18 +154,19 @@ $(document).ready(function(){
     });
 
     $.ajax({
-        url:"/listar-img/",
+        url:"/listar-img",
         method:"GET",
         dataType:"json",
         success:function(res){
             console.log("Respuesta");
             console.log(res);
             for (var i=0; i<res.length; i++){
-                $("#imagenes").append(
-                    `<option value="${res[i]._id}">${res[i].nombre}</option>`
-                );
-                
+            document.getElementById('imagenes').innerHTML+=
+                    `<option value="${res[i].nombre}">${res[i].nombre}</option>`;
+            
+             
             }
+            
 
         },
         error:function(error){
@@ -198,7 +207,8 @@ function editar(e,id){
     e.preventDefault();//Evitar comportamiento por defecto de un anchor
     $("#add-post").modal("show");
     console.log('Ver detalle de: ' + id);
-    document.getElementById('_id').value=id;
+    document.getElementById('codigo').value=id;
+    
     
     $.ajax({
         url:`/post/${id}`,
@@ -206,15 +216,18 @@ function editar(e,id){
         dataType:"json",
         success:function(res){
             console.log(res);
+            
             $($("#summernote").summernote("code",res[0].contenido)).text();
             document.getElementById('titulo').value = res[0].titulo;
             document.getElementById('autor').value = res[0].autor;
             document.getElementById('fechaActual').value = res[0].fecha;
+            document.getElementById('categorias').value= res[0].categoria;
             document.getElementById('imagenes').value = res[0].imagen;
-            document.getElementById('categorias').value = res[0].categoria.nombre;
+            
 
-            document.getElementById("btn-modificar-posts").style.display = "block";
-            document.getElementById("btn-registrar-posts").style.display = "none";
+            document.getElementById('btn-registrar-posts').style.display="none";
+            document.getElementById('btn-modificar-posts').style.display="block";
+            
         },
         error:function(error){
             console.log(error);
@@ -281,6 +294,7 @@ function agregarComentario(){
     var campos2= $("#registrarComentarios").serialize();
     console.log("Información a guardar: " + campos2);
     //console.log('Ver detalle de: ' + id);
+    
     $.ajax({
         url:"/comment/guardar-comentario",
         method:"POST",
@@ -291,7 +305,8 @@ function agregarComentario(){
             console.log("se registro el nuevo posts")
             
             document.getElementById('listar-comentarios').innerHTML += 
-                `<div class="" style="max-width: 200px;">
+                `<hr>
+                <div class="" style="max-width: 200px;">
                 <div class="row no-gutters">
                   <div class="col-md-4">
                     <img src="../img/user.webp" class="img-fluid img-circle" alt="...">
@@ -301,6 +316,7 @@ function agregarComentario(){
                       <h4 class="card-title" style="color:#ffbb00">${res.nombre}</h4>
                       <p class="card-text">${res.comentario}</p>
                     </div>
+                    <hr>
                   </div>
                 </div>
               </div>`;

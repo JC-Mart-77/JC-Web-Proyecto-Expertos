@@ -8,18 +8,25 @@ function generarPosts(informacion){
                 Post
             </div>
             <div class="panel-body">
+
+                
                 <a href="#"><p class="lead">${informacion[i].titulo}</p></a>
                 <p>${informacion[i].contenido}
                 <p>
-                    <strong>${informacion[i].categoria.nombre}</strong>
+                    <strong>${informacion[i].categoria}</strong>
                 </p>
                 <h5 style="color:#8e8d8a">${informacion[i].autor} | <span>${informacion[i].fecha}</span></h5>
-                <a class="btn btn-success" href="pagesPost.html"></i>Leer mas <i class="fa fa-arrow-right"></i></a>
+                <form action="pagesPost.html" method="GET">
+                <input type="hidden" id="_id" name="_id" value="${informacion[i]._id}">
+                <button type="subtmit" class="btn btn-success">Leer mas <i class="fa fa-arrow-right"></i></button>
+                </form>
             </div>
             <!-- /.panel-body -->
         </div>
         <!-- /.panel -->
     </div>`;
+
+    
     }
 }
 //funcion para obtener la categorias//

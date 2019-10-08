@@ -11,7 +11,7 @@ $("#btn-categoria").click(function(){
             console.log("se registro la categoria");
             document.getElementById('tabla-categorias').innerHTML += 
                 `<tr>
-                <td>${res._id}</td>
+                <td width="10%"></td>
                 <td>${res.nombre}</td>
                 <td>                                   
                 <a href="" onclick="editar(event, '${res._id}');"class="btn btn-xs btn-warning" id="editar"><i class="fa fa-pencil"></i></a>
@@ -62,12 +62,15 @@ function actualizarCategoria(){
         }
     });
 }
+
+
+
 //funcion para generar las categorias//
 function generarCategorias(información){
     for (var i=0; i<información.length; i++){
         document.getElementById('tabla-categorias').innerHTML += 
         `<tr>
-        <td></td>
+        <td width="10%"></td>
         <td>${información[i].nombre}</td>
         <td>                                   
         <a href="" onclick="editar(event, '${información[i]._id}');"class="btn btn-xs btn-warning" id="editar"><i class="fa fa-pencil"></i></a>

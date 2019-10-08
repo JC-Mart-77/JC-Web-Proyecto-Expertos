@@ -59,9 +59,13 @@ form, p{
 
 }
 .panel-primary .panel-heading{
-    color: #fff;
-    background-color: #00A1F1!important;
-    padding: 31px;
+    color: #006ada;
+    background-color: #fff!important;
+    padding:25px!important;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 6px rgba(0,0,0,0.175);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.175);
 }
 
 
@@ -70,9 +74,13 @@ form, p{
 
 }
 .panel-green .panel-heading{
-    color: #fff;
-    background-color: #34A843!important;
-    padding: 31px;
+    color: #34A843;
+    background-color: #fff!important;
+    padding: 25px!important;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 6px rgba(0,0,0,0.175);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.175);
    
 
 }
@@ -87,9 +95,13 @@ form, p{
 
 }
 .panel-yellow .panel-heading{
-    color: #fff;
-    background-color: #ffbb00!important;
-    padding: 31px;
+    color: #ffbb00;
+    background-color: #fff!important;
+    padding: 25px!important;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 6px rgba(0,0,0,0.175);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.175);
 
 }
 .panel-yellow{
@@ -97,9 +109,13 @@ form, p{
 
 }
 .panel-red .panel-heading{
-    color: #fff;
-    background-color: #ea4335!important;
-    padding: 31px;
+    color: #ea4335;
+    background-color: #fff!important;
+    padding: 25px!important;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 6px rgba(0,0,0,0.175);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.175);
 
 }
 .panel-red{
@@ -120,6 +136,13 @@ form, p{
     position: relative!important;
     display: block!important;
     padding: 15px 15px!important;
+    color: #211d1d!important;
+}
+.nav > li > #nombre-usuario {
+    position: relative!important;
+    display: block!important;
+    padding: 15px 15px!important;
+    color: #fff!important;
 }
 .panel-default > .panel-heading {
     color: #333!important;
@@ -137,6 +160,7 @@ form, p{
 .btn-primary{
     border-color: #00A1F1!important;
     background-color: #00A1F1!important;
+   
 }
 .btn-warning{
     color: white;
@@ -173,7 +197,54 @@ form, p{
     padding-bottom: 10px!important;
     
     color: white!important;*/
-    font-size: 16px!important;
+    font-size: 17px!important;
 }
 
+.fb{
+    margin-top: 15px;
+    text-align: center;
+    background-color: #4267B2;
+    color: white;
+    font-weight: bold;
+    height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
+  .imagen-boton-facebook{
+    width: 30px;
+    float: right;
+    display: none;
+  }
+
+  .icono-boton-facebook{
+    float: left;
+    font-size: 26px;
+    padding-left: 10px;
+  }
+
+#btn-login{
+    width: 100%;
+}
+
+#footer{
+    color:rgb(58, 57, 57);
+}
+.breadcrumb {
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: #ffffff!important;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 6px rgba(0,0,0,0.175);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.175);
+}
+#page-wrapper {
+    background-color: #f8f8f8!important;
+}
+
+.sidebar ul li {
+    border-bottom: 1px solid #ffffff;
+    background-color: white!important;
+}

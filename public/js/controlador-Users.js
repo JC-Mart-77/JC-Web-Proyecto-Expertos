@@ -1,8 +1,8 @@
-var tipoUsuarios = ['Administrador', 'Autor', 'Lector'];
+var tipoUsuarios = ['Administrador', 'Normal', 'Lector'];
     for (let i=0;i<tipoUsuarios.length; i++)
     document.getElementById('tipoUsuario').innerHTML += `<option value="${i}">${tipoUsuarios[i]}</option>`;
 
-    var tipoUsuarios = ['Administrador', 'Autor', 'Lector'];
+    var tipoUsuarios = ['Administrador', 'Normal', 'Lector'];
     for (let i=0;i<tipoUsuarios.length; i++)
     document.getElementById('tipoUsuario-modificar').innerHTML += `<option value="${i}">${tipoUsuarios[i]}</option>`;
 

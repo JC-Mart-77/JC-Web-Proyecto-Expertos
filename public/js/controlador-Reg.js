@@ -20,7 +20,7 @@ $("#btn-registrar").click(function(){
     $.ajax({
         url:"/user/signUp",
         method:"POST",
-        data:campos2+"&tipoUsuario=1",
+        data:campos2+"&tipoUsuario=Normal",
         dataType:"json",
         success: function(res){
             console.log(res);
@@ -32,7 +32,7 @@ $("#btn-registrar").click(function(){
                 showConfirmButton: false,
                 timer: 2000
               })
-            //window.location.href="../pages/login.html"
+              limpiarCampos();
         },
         error:function(error){
             console.log(error);
@@ -63,4 +63,12 @@ function marcarInput(id, valido){
         document.getElementById(id).classList.remove('is-valid');
         document.getElementById(id).classList.add('is-invalid');
     }
+}
+function limpiarCampos(){
+    document.getElementById('nombre').value='';
+    document.getElementById('apellido').value='';
+    document.getElementById('nombreUsuario').value='';
+    document.getElementById('email').value='';
+    document.getElementById('password').value='';
+ 
 }

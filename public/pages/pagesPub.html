@@ -42,12 +42,16 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
+    <script>
+
+</script>
+  
     <body>
 
             <!-- Navigation -->
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html"><img src="../img/logo1.png" class="img-fluid-top" width="100px" height="40px"></a>
+                <div class="navbar-header" id="logo">
+                    
                 </div>
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -59,8 +63,8 @@
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
                     <li><a href="index.html"><i class="fa fa-home fa-fw"></i> Inicio</a></li>
-                    <li><a href="pages.html"><i class="fa fa-envelope"></i> Contactos</a></li>
-                    <li><a href="login.html"><i class="fa fa-user-md "></i> Iniciar Sesion</a></li>
+                    <li><a href="#"><i class="fa fa-envelope"></i> Contactos</a></li>
+                   
                 </ul>
 
                 
@@ -68,71 +72,46 @@
     </nav>
     <div class="container">
         <div class="row">
-        <div class="col-md-12 pagina-principal" >
-        <h1>Jc Web</h1>
-        <p>Un blog para hablar sobre Desarrollo web</p>
+        <div class="col-md-12 pagina-principal" id="configPagina">
+        
         </div>
         </div>
         </div>
 
-    <div class="container">
+    <div class="container" >
         <div class="clearfix"></div>
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
-		<h1 style="color:#ffbb00">Nueva Pagina Publicada</h1>
-	<hr>
+    <div class="container" >
+	<div class="row" id="mostrarPaginas">
 
-<div class="row">
-		<div class="col-md-9">
-		<p>este es el contenido de esta pagina... lorem insup</p>		<br><br>
-    
-    <h4>Deja un comentario</h4>
-<form role="form" method="post" action="./?r=index/addcomment">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Nombre</label>
-    <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Nombre">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Correo electronico</label>
-    <input type="email" name="email" required class="form-control" id="exampleInputEmail1" placeholder="Correo Electronico">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Comentario</label>
-    <textarea class="form-control" name="comment" required rows="4" placeholder="Escribe tu comentario ..."></textarea>
-  </div>
-  <input type="hidden" name="post_id" value="1">
-  <button type="button" class="btn btn-success">Enviar comentario</button>
-</form>
-		</div>
-		<div class="col-md-3">
-		</div>
-	</div>
-
-		<br><br>
-
-		</div>
 	</div>
 	
 </div>
 </div>   
 
+<hr>
+<footer id="footer">
+    
+              
+</footer>
 
 
 
 
-<script src="../js/jquery-3.3.1.min.js"></script>
-<script src ="../js/popper.min.js"></script>
+<script src="../js/jquery.min.js"></script>
+
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/sweetalert2.all.min.js"></script>
 <script src="../js/sweetalert2.min.js"></script>
+<script src="../js/controlador-pagesPub.js"></script>
 
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.1/theme-monokai.js"></script> -->
 <!-- <script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ace.js" charset="UTF-8"></script> 
+
 
 <!-- <script src="js/controlador-dash.js"></script> -->
 
 </body>
 
 </html>
+
+

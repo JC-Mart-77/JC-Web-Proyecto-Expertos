@@ -139,7 +139,8 @@
                         <div class="form-group">
                             <label>Titulo</label>
                             <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Escriba titulo">
-                            <input type="text" id="_id" class="form-control">
+                            <input type="hidden" id="_id" class="form-control">
+                            <input type="hidden" id="codigo" class="form-control">
                         </div>
                         <div class="form-group">
                                 <label>Autor</label>
@@ -172,14 +173,9 @@
                         <div class="form-group">
                             <label>&nbsp;</label>
                             <label class="checkbox-inline">
-                                <input type="checkbox" name="is_public"> Publicar
+                                <input type="checkbox" name="accept_comments"> Aceptar comentarios
                             </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="accept_comments" checked> Aceptar comentarios
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="show_image"> Mostrar imagen destacada
-                            </label>
+                            
                         </div>
                         
                     </form>
@@ -187,11 +183,74 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 <button type="button" id="btn-registrar-posts" class="btn btn-success">Guardar</button>
-                <button type="button" style="display:none"  onclick="actualizarPosts();" id="btn-modificar-posts" class="btn btn-success">Actualizar</button>
+                <button type="button" onclick="actualizarPosts();" display="none" id="btn-modificar-posts" class="btn btn-success">Actualizar</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
    
+</div><!-- /.modal -->
+<div class="modal fade" id="modificar-post" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Modificar Post</h4>
+        </div>
+        <div class="modal-body">
+                <form id="modificarPost">
+                    <div class="form-group">
+                        <label>Titulo</label>
+                        <input type="text" name="titulo-modificar" id="titulo-modificar" class="form-control" placeholder="Escriba titulo">
+                        <input type="text" name="_id-modificar" id="_id-modificar" class="form-control">
+                    </div>
+                    <div class="form-group">
+                            <label>Autor</label>
+                            <input type="text" name="autor_modificar" id="autor-modificar" class="form-control" placeholder="Nombre Autor">
+                    </div>
+                    <div class="form-group">
+                            <label>Fecha Publicacion</label>
+                            <input type="date" name="fechaActual_modificar" id="fechaActual-modificar" class="form-control" placeholder="Fecha Publicacion">
+                        </div>
+                    <div class="form-group">
+                        <label>Contenido</label>
+                        <div name="contenido_modificar" id="summernote1"></div>
+                        <!--<textarea class="form-control" name="contenido" id="contenido" cols="10" rows="5"></textarea>-->
+                    </div>
+                    <div class="form-group">
+                        <label>Imagen destacada</label>
+                        <select class="form-control" name="imagenes_modificar" id="imagenes-modificar">
+                                
+                        </select>
+                        <!--<input type="file" name="imagen" id="image">-->
+                    </div>
+                    <div class="form-group">
+                        <label>Categorias</label>
+                        <select class="form-control" name="categorias_modificar" id="categorias-modificar">
+
+                        </select>
+                        <!--<label ><input type="checkbox" id="category_id[]" value="2"> Tecnologia</label>-->
+                        </div>
+                    <br>
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="is_public"> Publicar
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="accept_comments"> Aceptar comentarios
+                        </label>
+                        
+                    </div>
+                    
+                </form>
+            </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" onclick="actualizarPosts();" id="btn-modificar-posts" class="btn btn-success">Actualizar</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
 </div><!-- /.modal -->
 
 
@@ -199,6 +258,7 @@
         $(document).ready(function() {
             $('#summernote').summernote();
         });
+       
  </script>
       
        

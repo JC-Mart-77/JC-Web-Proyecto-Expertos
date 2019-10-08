@@ -8,7 +8,8 @@ var esquema = new mongoose.Schema(
         fecha: String,
         contenido : String,
         imagen : String,
-        categoria:mongoose.Schema.Types.Mixed
+        categoria:String,
+        comentario:Array
     }
 
 );

@@ -10,10 +10,8 @@ $("#btn-login").click(function(){
             // aqui voy
             console.log('que paso');
             console.log(res);
-            if(res.status==1){
+            if(res.status ==1){
                 window.location.href="../pages/index.html" 
-                //console.log("manda a otra padina");
-               
             }else{
                console.log("no hizo lo correcto")
                Swal.fire({
@@ -23,7 +21,8 @@ $("#btn-login").click(function(){
                 width: "25rem",
                 padding:"1rem"
               })
-           }     
+            } 
+                
         },
         error:function(error){
             

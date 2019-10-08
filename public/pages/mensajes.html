@@ -73,26 +73,16 @@
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th></th>
-                                        <th>Contenido</th>
-                                        <th>Nombre</th>
-                                        <th>Email</th>
+                                        <th style="width: 20px">Nombre</th>
+                                        <th>Correo</th>
+                                        <th>Respuesta</th>
+                                        <th>POST</th>
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                                                            <tr>
-                                        <td></td>
-                                        <td>este es mi comentario</td>
-                                        <td>jua carlos</td>
-                                        <td>jcmartinezh42@gmail.com</td>
-                                        <td style="width:70px;">
-                                        <!-- Button trigger modal -->
-                                        <a data-toggle="modal" href="#answermsg1" class="btn btn-success btn-xs"><i class="fa fa-send"></i></a>
-                                        <a href="./?r=admin/delpost&id=1" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
-                                        </td>
-                                    </tr>
-                                                                        </tbody>
+                                <tbody id="tabla-mensajes">
+                                    
+                                </tbody>
                             </table>
                         </div>
                                 <!-- /.table-responsive -->                               
@@ -152,7 +142,7 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="../js/startmin.js"></script>
-
+<script src="../js/controlador-mensajes.js"></script>
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
     $(document).ready(function() {
