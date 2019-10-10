@@ -35,6 +35,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use(express.static("public"));
 var loginVerificado = express.static("public");
 
+app.set('port', (process.env.PORT || 3000));
 app.use(session({
     secret:"jcweb_db",
     resave:true, 
@@ -254,7 +255,7 @@ app.post("/login_facebook",function(req, res){
 });
 
 
-app.listen(3333, function(){
+app.listen(app.get('port'), function() {
   console.log('servidos levantado en 3333');
 });
 
