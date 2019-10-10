@@ -8,7 +8,7 @@ class Database{
         this.conectar();
     }
     conectar(){
-        mongoose.connect(`mongodb://${servidor}/${nombreBaseDatos}`)
+        mongoose.connect(`mongo "mongodb+srv://cmsjcwe2019-axr6r.mongodb.net/test"  --username JuanCarlos`)
         .then(()=>console.log(`se conecto a la base de datos ${nombreBaseDatos}`))
         .catch(error=>{
            console.error(JSON.stringify(error)) ;
